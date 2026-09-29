@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#064e3b" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Lucky Buzz - Modern Lottery & Draw WebApp</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#ecfdf5',
+                100: '#d1fae5',
+                200: '#a7f3d0',
+                300: '#6ee7b7',
+                400: '#34d399',
+                500: '#10b981',
+                600: '#059669',
+                700: '#047857',
+                800: '#065f46',
+                900: '#064e3b',
+                950: '#022c22',
+              },
+              gold: {
+                50: '#fffbeb',
+                100: '#fef3c7',
+                200: '#fde68a',
+                300: '#fcd34d',
+                400: '#fbbf24',
+                500: '#f59e0b',
+                600: '#d97706',
+                700: '#b45309',
+                800: '#92400e',
+                900: '#78350f',
+              }
+            },
+            fontFamily: {
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+            },
+            animation: {
+              'bounce-subtle': 'bounce 2s infinite',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'spin-slow': 'spin 8s linear infinite',
+            }
+          },
+        },
+      }
+    </script>
+
+    <!-- Custom CSS styles -->
+    <link rel="stylesheet" href="/src/index.css" />
+
+    <!-- Base Vendor Runtimes (100% Local & Fast) -->
+    <script src="/node_modules/react/umd/react.production.min.js"></script>
+    <script src="/node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="/node_modules/canvas-confetti/dist/confetti.browser.js"></script>
+
+    <!-- Local ESM Import Maps -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "/vendor/react.js",
+        "react/": "/vendor/",
+        "react-dom": "/vendor/react-dom.js",
+        "react-dom/": "/vendor/",
+        "react-dom/client": "/vendor/react-dom-client.js",
+        "react-router-dom": "/vendor/react-router-dom.js",
+        "lucide-react": "/vendor/lucide-react.js",
+        "canvas-confetti": "/vendor/canvas-confetti.js",
+        "clsx": "/vendor/clsx.js",
+        "tailwind-merge": "/vendor/tailwind-merge.js"
+      }
+    }
+    </script>
+    <script>
+      window.addEventListener('error', function(e) {
+        console.error('App runtime error:', e);
+        const root = document.getElementById('root');
+        if (root && (!root.innerHTML || root.innerHTML.trim() === '')) {
+          root.innerHTML = '<div style="color: #f87171; background: #0f172a; padding: 24px; font-family: monospace; min-height: 100vh;"><h3>Initialization Notice</h3><p style="color: #94a3b8;">' + (e.message || 'Error loading module') + '</p><pre style="color: #64748b; font-size: 12px; margin-top: 12px;">' + (e.filename ? e.filename + ':' + e.lineno : '') + '</pre></div>';
+        }
+      });
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen antialiased selection:bg-emerald-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
